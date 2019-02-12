@@ -1,0 +1,9 @@
+micronaut:
+    application:
+        name: gc-example-b
+    #server:
+     #   port: 9002
+
+endpoints:
+    health:
+        enabled: true
