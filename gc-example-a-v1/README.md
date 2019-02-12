@@ -1,5 +1,5 @@
 # gc-example-a
-
+Un servicio dummy hecho en java con el framework micronaut y montado sobre un GraalVm. Documentacion oficial en https://docs.micronaut.io/latest/guide/index.html
 # PREREQUISITOS
 - Gradle: Para compilar el java -> https://gradle.org/install/
 - Docker: Para generar la imagen
@@ -18,9 +18,9 @@
 - Contruir la imagen
   - $ docker build -f DockerfileAllInOne .
 - Tagearla
-  - $ docker tag 7cb9550650b3 gcr.io/${GKE_PROJECT_ID}/gc-example-a:2.0.0 
+  - $ docker tag 7cb9550650b3 gcr.io/${GKE_PROJECT_ID}/gc-example-a:1.0.0 
 - Subirla al registry
-  - $ docker push gcr.io/${GKE_PROJECT_ID}/gc-example-a:2.0.0 
+  - $ docker push gcr.io/${GKE_PROJECT_ID}/gc-example-a:1.0.0 
 
 ## GENERAR LOS OBJETOS DE KUBERNETES
 Hay dos aproximaciones a manita con kubectl apply o con Helm

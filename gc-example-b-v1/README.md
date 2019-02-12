@@ -1,5 +1,5 @@
 # gc-example-b
-
+Un servicio con un HTTP-Client hecho en java y pensado para consumir el gc-example-a de manera reactiva. El framework es micronaut y la app se monta sobre un GraalVm. Documentacion oficial en https://docs.micronaut.io/latest/guide/index.html
 # PRERUQUISITOS
 - Gradle: Para compilar el java -> https://gradle.org/install/
 - Docker: Para generar la imagen
