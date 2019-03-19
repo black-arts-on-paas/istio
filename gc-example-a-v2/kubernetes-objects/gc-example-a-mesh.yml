@@ -12,7 +12,7 @@ spec:
       - GET
     match:
     - uri:
-        prefix: /colors
+        prefix: /messages
     route:
     - destination:
         host: gc-example-a

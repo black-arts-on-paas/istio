@@ -8,18 +8,18 @@ import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Produces;
 import io.reactivex.Flowable;
 
-@Controller("/colors")
-public class ColorsController {
+@Controller("/messages")
+public class MessagesController {
 
-    private final ColorsImpl service;
+    private final MessagesImpl service;
 
-    public ColorsController(ColorsImpl service) {
+    public MessagesController(MessagesImpl service) {
         this.service = service;
     }
 
     @Get("/")
     @Produces(MediaType.APPLICATION_JSON_STREAM)
-    public Flowable<Color> getColors(){
-        return service.getColors();
+    public Flowable<Message> getMessages(){
+        return service.getMessages();
     }
 }
