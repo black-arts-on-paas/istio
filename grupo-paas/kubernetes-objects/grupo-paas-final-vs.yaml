@@ -10,11 +10,24 @@ spec:
   - '*'
   http:
   - corsPolicy:
+      allowCredentials: true
+      allowHeaders:
+      - content-type
+      - content-length
+      - x-requested-with
+      - device
+      - authorization
       allowMethods:
       - GET
       - OPTIONS
       allowOrigin:
       - '*'
+      exposeHeaders:
+      - content-type
+      - content-length
+      - requested-with
+      - device
+      - authorization
     match:
     - headers:
         device:
@@ -27,7 +40,26 @@ spec:
         port:
           number: 8000
         subset: iphone
-  - route:
+  - corsPolicy:
+      allowCredentials: true
+      allowHeaders:
+      - content-type
+      - content-length
+      - x-requested-with
+      - device
+      - authorization
+      allowMethods:
+      - GET
+      - OPTIONS
+      allowOrigin:
+      - '*'
+      exposeHeaders:
+      - content-type
+      - content-length
+      - requested-with
+      - device
+      - authorization
+    route:
     - destination:
         host: grupo-paas
         port:
