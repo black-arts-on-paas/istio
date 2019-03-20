@@ -1,0 +1,35 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: grupo-paas
+  namespace: grupo-conocimiento
+spec:
+  gateways:
+  - grupo-paas-gateway
+  hosts:
+  - '*'
+  http:
+  - corsPolicy:
+      allowMethods:
+      - GET
+      - OPTIONS
+      allowOrigin:
+      - '*'
+    match:
+    - headers:
+        device:
+          exact: iphone
+      uri:
+        prefix: /grupo-paas
+    route:
+    - destination:
+        host: grupo-paas
+        port:
+          number: 8000
+        subset: iphone
+  - route:
+    - destination:
+        host: grupo-paas
+        port:
+          number: 8000
+        subset: android
